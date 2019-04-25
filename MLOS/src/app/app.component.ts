@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {getUnique} from "./utils/functions"
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'MLOS';
+
+  unsortedUnUniqueArray = [9, 8, 8,9, 9, 9, 8, 8, 9]
+
+  showUnique(b) {
+    return getUnique(b)
+  }
+
 }
