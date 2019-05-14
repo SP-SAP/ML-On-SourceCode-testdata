@@ -1,3 +1,28 @@
+// example of recursive function with member dependency, no utilization of return value
+class Node {
+  name: string
+  children: Node[]
+}
+
+class NodeFinder {
+  _hasNodeIncluded: boolean
+  _foundNode: Node
+
+  findNode(node: Node, key: string): Node {
+    if (node.name === key ) {
+      this._hasNodeIncluded = true
+      this._foundNode = node
+    }
+    node.children.map((childNode: Node) => this.findNode(childNode, key))
+    return this._foundNode
+  }
+}
+
+const newNodeFinder = new NodeFinder()
+console.log(newNodeFinder.findNode({name: 'Peter Pan', children: []}, 'Peter Parker'))
+
+
+
 // --- function getUniq ---
 /* input: unsorted array */
 /* output: sorted array with only unique values */
