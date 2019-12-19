@@ -1,4 +1,4 @@
-// example of recursive function with member dependency, no utilization of return value
+// example of recursive function with member dependency, no utilization of return value and second class
 class Node {
   name: string
   children: Node[]
@@ -22,6 +22,7 @@ const newNodeFinder = new NodeFinder()
 console.log(newNodeFinder.findNode({name: 'Peter Pan', children: []}, 'Peter Parker'))
 
 
+// example of dirty coding for unique items in an array including bad comments
 
 // --- function getUniq ---
 /* input: unsorted array */
